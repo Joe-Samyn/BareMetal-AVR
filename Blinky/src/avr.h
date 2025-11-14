@@ -18,7 +18,8 @@ int F_CPU = 1000000;
  *
  * @param ms The amount of time in milliseconds to delay code execution
  * @return 
- */
+ */ 
+// TODO: Needs unit tests to verify delay is correct
 void delay_ms(byte ms) {
    // Calculate the Cycles per ms rounded down 
    int c_ms = F_CPU / 1000;
