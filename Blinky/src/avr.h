@@ -26,4 +26,11 @@ void delay_ms(byte ms) {
    // Calculate the number of Cycles the CPU needs to be delayed to achieve desired ms delay
    int total_cycles = c_ms * ms;
 
+   // The # of instructions in the while loop = ~8 instructions. 
+   // Most of the instructions require a single clock cycle, except the last two require 2 clock Cycles
+   // This puts us at ~10 cycles / iteration 
+   register int iterations = total_cycles / 10;
+
+   // Loop until iterations == 0
+   while(iterations--);
 }
